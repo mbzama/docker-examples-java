@@ -1,7 +1,9 @@
 Installation:
 
-For Windows: Please follow the instructions
-    https://docs.docker.com/v17.09/docker-for-windows/install/#start-docker-for-windows
+For Windows: 
+
+     Please follow the instructions
+      https://docs.docker.com/v17.09/docker-for-windows/install/#start-docker-for-windows
     
     
 For Linux: 
@@ -14,7 +16,9 @@ For Linux:
     
     sudo apt install docker-compose
     
-    
+Verify installation:
+
+    docker run hello-world
     
     
 
