@@ -29,7 +29,8 @@ Standalone
      -------------
      Build binary
      -------------
-          mvn clean compile jar:jar
+         cd standalone
+         mvn clean compile jar:jar
 
      -------------
      Run binary
@@ -65,3 +66,31 @@ Standalone
 
           Java 11
                docker run --name java11-app-c1 java11-app		
+
+
+-------------
+spring-boot
+-------------
+     -------------
+     Build the executable
+     -------------
+       cd spring-boot
+       ./mvnw package && java -jar target/spring-boot-demo-1.0.jar
+       
+       Access the app using
+           http://localhost:8085/greet?name=zama
+
+     -------------
+     Build docker image
+     -------------
+       docker build -t spring-boot-app .
+
+     -------------
+     Run app as Docker container
+     -------------
+       docker run -p 9999:8085 --name springboot-c1 spring-boot-app
+       
+       Access the app using
+           http://localhost:9999/greet?name=zama
+
+     
