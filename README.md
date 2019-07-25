@@ -142,7 +142,7 @@ Upload image to public registry (dockerhub)
 	    	
   3. Login to dockerhub registry
   
-	      docker login --username={user_name} 
+	      docker login
 
   4. Tag the image
   
