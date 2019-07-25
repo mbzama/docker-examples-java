@@ -151,3 +151,17 @@ Upload image to public registry (dockerhub)
   5. Upload the image to public docker registry:
   
 	     docker push {user_name}/java8-app
+	     
+
+-------------
+Using Maven for docker tasks
+-------------
+We can use `dockerfile-maven` plugin from spotify for build/tag/publish docker images 
+
+To build and tag image
+  
+    mvn dockerfile:build
+    
+To deploy or publish image
+    
+    mvn dockerfile:push
