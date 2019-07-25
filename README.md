@@ -1,4 +1,39 @@
 -------------
+Cheatsheet
+-------------
+
+  To clean up un-used resources
+  
+	   docker system prune
+	
+  To view active containers
+  
+	   docker ps 
+	
+  To view all containers
+  
+	   docker ps -a
+	
+  To view images
+  
+	   docker images
+
+  To remove container
+  
+	   docker rm -f {container_name}
+	
+  To remove image
+  
+	   docker rmi --image {image_name}
+    
+
+  To view logs
+  
+    docker logs -f {container_name}
+    docker logs -f {container_name} --tail 100
+
+
+-------------
 Installation
 -------------
  For Windows: 
@@ -93,4 +128,40 @@ spring-boot
        Access the app using
            http://localhost:9999/greet?name=zama
 
-     
+  
+-------------
+Upload image to public registry (dockerhub)
+-------------
+   1. Create account in dockerhub: 
+   
+          https://hub.docker.com
+
+  2. Create docker repository with name as: 
+  
+         java8-app
+	    	
+  3. Login to dockerhub registry
+  
+	      docker login --username={user_name} 
+
+  4. Tag the image
+  
+	     docker tag java8-app {user_name}/java8-app
+
+  5. Upload the image to public docker registry:
+  
+	     docker push {user_name}/java8-app
+	     
+
+-------------
+Using Maven for docker tasks
+-------------
+We can use `dockerfile-maven` plugin from spotify for build/tag/publish docker images 
+
+To build and tag image
+  
+    mvn dockerfile:build
+    
+To deploy or publish image
+    
+    mvn dockerfile:push
