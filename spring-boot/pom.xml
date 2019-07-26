@@ -11,7 +11,6 @@
 	<groupId>zama.training</groupId>
 	<artifactId>spring-boot-demo</artifactId>
 	<version>1.0</version>
-	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -54,7 +53,7 @@
 					<repository>zamadockertraining/${project.artifactId}</repository>
 					<tag>${project.version}</tag>
 					<buildArgs>
-						<JAR_FILE>standalone-${project.version}.jar</JAR_FILE>
+						<JAR_FILE>spring-boot-demo-${project.version}.jar</JAR_FILE>
 					</buildArgs>
 				</configuration>
 			</plugin>
