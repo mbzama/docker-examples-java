@@ -113,7 +113,8 @@ spring-boot
        ./mvnw package && java -jar target/spring-boot-demo-1.0.jar
        
        Access the app using
-           http://localhost:8085/greet?name=zama
+           Windows: http://192.168.99.100:8085/greet?name=zama  (Get the IP using `docker-machine ip` command)
+	   Ubuntu : http://localhost:8085/greet?name=zama
 
      -------------
      Build docker image
@@ -126,7 +127,8 @@ spring-boot
        docker run -p 9999:8085 --name springboot-c1 spring-boot-app
        
        Access the app using
-           http://localhost:9999/greet?name=zama
+           Windows: http://192.168.99.100:9999/greet?name=zama  (Get the IP using `docker-machine ip` command)
+           Ubuntu : http://localhost:9999/greet?name=zama
 
   
 -------------
