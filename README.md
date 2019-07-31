@@ -29,8 +29,8 @@ Cheatsheet
 
   To view logs
   
-    docker logs -f {container_name}
-    docker logs -f {container_name} --tail 100
+           docker logs -f {container_name}
+           docker logs -f {container_name} --tail 100
 
 
 -------------
