@@ -29,8 +29,8 @@ Cheatsheet
 
   To view logs
   
-       docker logs -f {container_name}
-       docker logs -f {container_name} --tail 100
+    docker logs -f {container_name}
+    docker logs -f {container_name} --tail 100
 
 
 -------------
@@ -167,3 +167,12 @@ To build and tag image
 To deploy or publish image
     
     mvn dockerfile:push
+        
+    
+-------------
+Scaling
+-------------
+We can scale the containers easily using docker-compose
+        For standalone:
+               docker-compose scale standalone=5
+			   
