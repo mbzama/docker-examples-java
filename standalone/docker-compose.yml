@@ -1,0 +1,7 @@
+version: '3'
+services:
+  standalone:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: java8-app
