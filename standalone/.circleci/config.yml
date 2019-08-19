@@ -1,0 +1,34 @@
+version: 2
+jobs:
+  build:
+    
+    working_directory: ~/docker-training-java/standalone
+
+    docker:
+      - image: circleci/openjdk:8-jdk-stretch
+      - image: circleci/postgres:9.6.3-alpine
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: circle_test
+
+    steps:
+
+      - checkout
+
+      - restore_cache:
+          key: java8-app-{{ checksum "pom.xml" }}
+      
+      - run: mvn dependency:go-offline
+      
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: java8-app-{{ checksum "pom.xml" }}
+      
+      - run: mvn package
+      
+      - store_test_results:
+          path: target/surefire-reports
+      
+      - store_artifacts:
+          path: target/standalone-1.0.jar
