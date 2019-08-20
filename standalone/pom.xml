@@ -41,8 +41,8 @@
 						</execution>
 					</executions>
 					<configuration>
-						<repository>zamadockertraining/${project.artifactId}</repository>
-						<tag>${project.version}</tag>
+						<repository>zamadockertraining</repository>
+						<tag>java8app</tag>
 						<buildArgs>
 							<JAR_FILE>standalone-${project.version}.jar</JAR_FILE>
 						</buildArgs>
