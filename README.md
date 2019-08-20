@@ -29,8 +29,8 @@ Cheatsheet
 
   To view logs
   
-    docker logs -f {container_name}
-    docker logs -f {container_name} --tail 100
+           docker logs -f {container_name}
+           docker logs -f {container_name} --tail 100
 
 
 -------------
@@ -119,12 +119,12 @@ spring-boot
      -------------
      Build docker image
      -------------
-       docker build -t spring-boot-app .
+       docker build -t spring-boot-demo .
 
      -------------
      Run app as Docker container
      -------------
-       docker run -p 9999:8085 --name springboot-c1 spring-boot-app
+       docker run -p 9999:8085 --name springboot-c1 spring-boot-demo
        
        Access the app using
            Windows: http://192.168.99.100:9999/greet?name=zama  (Get the IP using `docker-machine ip` command)
@@ -136,11 +136,11 @@ Upload image to public registry (dockerhub)
 -------------
    1. Create account in dockerhub: 
    
-          https://hub.docker.com
+              https://hub.docker.com
 
   2. Create docker repository with name as: 
   
-         java8-app
+              java8-app
 	    	
   3. Login to dockerhub registry
   
@@ -173,6 +173,7 @@ To deploy or publish image
 Scaling
 -------------
 We can scale the containers easily using docker-compose
+
         For standalone:
                docker-compose scale standalone=5
 			   
