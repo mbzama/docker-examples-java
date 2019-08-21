@@ -1,7 +1,7 @@
 -----------
 Git
 -----------
-git remote add upstream https://github.com/{your_repo}/docker-training-java.git
+git remote add upstream https://github.com/mbzama/docker-training-java.git
 
 git fetch upstream
 
