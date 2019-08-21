@@ -1,1 +1,1 @@
-echo '<EMP_ID> Running run.sh file - '$(date)
+echo '65_Rakesh running from data folder and run.sh file - ' $(date)
