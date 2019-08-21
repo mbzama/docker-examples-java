@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>zama.training</groupId>
+	<groupId>zamadockertraining</groupId>
 	<artifactId>standalone</artifactId>
 	<version>1.0</version>
 	<name>Standalone java app</name>
@@ -41,8 +41,8 @@
 						</execution>
 					</executions>
 					<configuration>
-						<repository>zamadockertraining/{project.artifactId}</repository>
-						<tag>${project.version}</tag>
+						<repository>zamadockertraining/java8app</repository>
+						<tag>3</tag>
 						<buildArgs>
 							<JAR_FILE>standalone-${project.version}.jar</JAR_FILE>
 						</buildArgs>
