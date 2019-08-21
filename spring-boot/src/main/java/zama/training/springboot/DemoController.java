@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class DemoController {
 	private static Logger logger = LoggerFactory.getLogger(DemoApplication.class);
 
-    private static final String template = "<EMP_ID>_<NAME> - Welcome to Training: %s!";
+    private static final String template = "919_Zama - Welcome to Training: %s!";
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/greet")
