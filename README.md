@@ -1,3 +1,22 @@
+-----------
+Git
+-----------
+git remote add upstream https://github.com/mbzama/docker-training-java.git
+
+git fetch upstream
+
+git checkout master
+
+git stash
+
+git merge upstream/master
+
+git commit -am "Merged from upstream"
+
+git push
+
+git stash pop
+
 -------------
 Cheatsheet
 -------------
