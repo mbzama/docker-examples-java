@@ -221,23 +221,35 @@ Copy from Docker Container to Host machine:
 -------------
 Docker Compose
 -------------
+
 To build and start:
-	`docker-compose up --build`
+
+	docker-compose up --build
+
 
 To build:
-	`docker-compose build`
+
+	docker-compose build
+
 
 To create/run containers:
-	`docker-compose up`
+
+	docker-compose up
+
 
 To stop containers:
-	`docker-compose stop`
+
+	docker-compose stop
+	
 	
 To stop and remove all containers:
-	`docker-compose down`
+
+	docker-compose down
+
 
 To start particular service:
-	`docker-compose up {service_name}`
+
+	docker-compose up {service_name}
 
 -------------
 Scaling
