@@ -168,7 +168,37 @@ To deploy or publish image
     
     mvn dockerfile:push
         
-    
+
+-------------
+Working with Volumes
+-------------
+Create folder and file
+	`mkdir data
+	nano run.sh`
+	
+Add this content 
+	`echo '<EMP_ID> Running run.sh file - '$(date)`
+	
+Copy from Host machine to Docker Container:
+   `docker cp /host_dir container_name:/container_dir`
+
+Copy from Docker Container to Host machine:
+   `docker cp container_name:/container_dir /host_dir` 
+   
+    Example:
+    	Copy file from host machine to container 
+	   		docker cp data/ java8-app-c1:/data	
+	
+     	Login to the docker container
+	   		docker exec -it java8-app-c1
+	
+     	Verify the file
+	   		ls -l data
+	   		cat data/run.sh
+	
+     	Run the file
+	   		sh run.sh
+
 -------------
 Scaling
 -------------
@@ -176,4 +206,5 @@ We can scale the containers easily using docker-compose
 
         For standalone:
                docker-compose scale standalone=5
-			   
+		
+
