@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  api:
+   build:
+     context: customer-api
+   image: customer-api
+   ports:
+      - 9090:9090    
+   expose:
+      - 9090
+   depends_on:
+      - db
+   links:
+      - db:db
+      
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: customerdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: adminpwd
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
