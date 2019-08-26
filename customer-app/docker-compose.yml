@@ -1,5 +1,17 @@
 version: '3.3'
 services:
+  ui:  
+      container_name: ui
+      build: 
+        context: customer-web      
+      image: angular
+      depends_on:
+         - api
+      ports: 
+         - '4200:4200'
+      command: > 
+        bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+        
   api:
    build:
      context: customer-api

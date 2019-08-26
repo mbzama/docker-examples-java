@@ -1,12 +1,18 @@
 package com.example.model;
 
+import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
@@ -15,26 +21,29 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
  *
  */
 @Entity
-@Table(name = "customer")
+@Table(name = "employee")
 @EntityListeners(AuditingEntityListener.class)
 //@JsonIgnoreProperties(value = {"createdAt", "updatedAt"},  allowGetters = true) This is used to ignore properties in request body
-public class Customer {
+public class Employee {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	
+
 	private String firstName;
 	private String lastName;
-
-	public Customer() {
-	}
+	private String username;
+	private String password;
 	
-	public Customer(String firstName, String lastName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.username = firstName + " " + lastName;
-	}
+	private String emailId;
+
+	@Temporal(TemporalType.DATE)
+	@CreatedDate
+	private Date createdAt = new Date();
+
+	@Temporal(TemporalType.DATE)
+	@LastModifiedDate
+	private Date updatedAt = new Date();
 
 	public Long getId() {
 		return id;
@@ -60,8 +69,37 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
+	public Date getCreatedAt() {
+		return createdAt;
+	}
 
-	 public String getUsername() {
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	protected Employee() {
+		if(createdAt==null)
+			this.setCreatedAt(new Date());
+
+		if(updatedAt==null)
+			this.setUpdatedAt(new Date());
+
+	}
+
+	public Employee(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = firstName + " "+lastName;
+	}
+
+	public String getUsername() {
 		return username;
 	}
 
@@ -77,9 +115,14 @@ public class Customer {
 		this.password = password;
 	}
 
-	private String username;
-	    private String password;
 
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
 
 	@Override
 	public String toString() {

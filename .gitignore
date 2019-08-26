@@ -1,0 +1,10 @@
+node_modules
+.log
+output
+.settings/
+target
+bin
+.git
+git
+.classpath
+.project
