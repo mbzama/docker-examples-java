@@ -16,6 +16,10 @@ export class EmployeeService {
     return this.http.get(`${this.baseUrl}/find/${id}`);
   }
 
+  createRandomEmployee(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/create-random`);
+  }
+
   createEmployee(employee: Object): Observable<Object> {
     console.log('/create: '+JSON.stringify(employee))
     return this.http.post(`${this.baseUrl}/create`, employee);

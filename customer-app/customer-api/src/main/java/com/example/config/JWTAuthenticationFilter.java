@@ -17,7 +17,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.example.model.Customer;
+import com.example.model.Employee;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
@@ -37,7 +37,7 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
 	public Authentication attemptAuthentication(
 			HttpServletRequest req, HttpServletResponse res)
 					throws AuthenticationException, IOException, ServletException {
-		Customer creds = new ObjectMapper().readValue(req.getInputStream(), Customer.class);
+		Employee creds = new ObjectMapper().readValue(req.getInputStream(), Employee.class);
 		return getAuthenticationManager().authenticate(
 				new UsernamePasswordAuthenticationToken(
 						creds.getUsername(),

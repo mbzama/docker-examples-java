@@ -1,7 +1,7 @@
 package com.example.model;
 
 import java.util.Date;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -23,7 +23,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Entity
 @Table(name = "employee")
 @EntityListeners(AuditingEntityListener.class)
-//@JsonIgnoreProperties(value = {"createdAt", "updatedAt"},  allowGetters = true) This is used to ignore properties in request body
 public class Employee {
 
 	@Id
@@ -45,6 +44,14 @@ public class Employee {
 	@LastModifiedDate
 	private Date updatedAt = new Date();
 
+	public Employee() {}
+	
+	public Employee(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = firstName + " "+lastName;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -83,20 +90,6 @@ public class Employee {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
-	}
-	protected Employee() {
-		if(createdAt==null)
-			this.setCreatedAt(new Date());
-
-		if(updatedAt==null)
-			this.setUpdatedAt(new Date());
-
-	}
-
-	public Employee(String firstName, String lastName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.username = firstName + " "+lastName;
 	}
 
 	public String getUsername() {

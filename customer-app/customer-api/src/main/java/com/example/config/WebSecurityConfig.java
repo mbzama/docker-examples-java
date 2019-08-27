@@ -24,14 +24,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 		// .antMatchers("/").permitAll()
 
-		.antMatchers(HttpMethod.GET, "/api/customer/test").permitAll() //just to test our API is up and running  
-		.antMatchers(HttpMethod.POST, "/api/customer/login").permitAll()
-		.antMatchers(HttpMethod.GET, "/api/**").permitAll() // Uncomment to permit all GET requests with /api/
-		.antMatchers(HttpMethod.POST, "/api/**").permitAll() // Uncomment to permit all POST requests with /api/
+		.antMatchers(HttpMethod.GET, "/api/employee/test").permitAll() //just to test our API is up and running  
+		.antMatchers(HttpMethod.POST, "/api/employee/login").permitAll()
+		.antMatchers(HttpMethod.GET, "/api/employee/**").permitAll() // Uncomment to permit all GET requests with /api/
+		.antMatchers(HttpMethod.POST, "/api/employee/**").permitAll() // Uncomment to permit all POST requests with /api/
 		.anyRequest().authenticated()
 		.and()
 		// We filter the /api/customer/login requests --> for Authentication
-		.addFilterBefore(new JWTAuthenticationFilter("/api/customer/login", authenticationManager()),
+		.addFilterBefore(new JWTAuthenticationFilter("/api/employee/login", authenticationManager()),
 				UsernamePasswordAuthenticationFilter.class)
 		// And filter other requests to check the presence of JWT in header --> for Authorization
 		.addFilterBefore(new JWTAuthorizationFilter(),
