@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   ui:  
-      container_name: ui
+      container_name: customer-ui
       build: 
         context: customer-web      
       image: angular
@@ -13,6 +13,7 @@ services:
         bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
         
   api:
+   container_name: customer-api 
    build:
      context: customer-api
    image: customer-api
@@ -26,6 +27,7 @@ services:
       - db:db
       
   db:
+    container_name: customer-db
     image: mysql:5.7
     restart: always
     environment:
