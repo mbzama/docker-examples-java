@@ -19,12 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class DemoController {
 	private static Logger logger = LoggerFactory.getLogger(DemoApplication.class);
-<<<<<<< HEAD
 
-    private static final String template = "919_Zama - Welcome to Training: %s!";
-=======
     private static final String template = "<EMP_ID>_<NAME> - Welcome to Training: %s!";
->>>>>>> 2c38ab10d142fe414c81b994865b7aae30547147
+    
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/greet")
@@ -35,8 +32,7 @@ public class DemoController {
         try {
         	greeting = new Greeting(counter.incrementAndGet(), String.format(template, name), InetAddress.getLocalHost().getHostAddress());
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Error occurred while starting spring boot app", e);
 		}
         return greeting;
     }
