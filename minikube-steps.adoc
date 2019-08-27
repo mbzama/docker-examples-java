@@ -14,13 +14,18 @@ minikube version curl -Lo minikube https://storage.googleapis.com/minikube/relea
 
 Start-up Commands
 
-sudo minikube start --vm-driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost sudo chown -R $USER $HOME/.minikube sudo chgrp -R $USER $HOME/.minikube sudo mv /home/haseeb/.kube /home/haseeb/.minikube $HOME sudo chown -R $USER $HOME/.kube $HOME/.minikube
+sudo minikube start --vm-driver=none --apiserver-ips 127.0.0.1 --apiserver-name localhost 
+sudo chown -R $USER $HOME/.minikube 
+sudo chgrp -R $USER $HOME/.minikube 
+sudo mv /home/haseeb/.kube /home/haseeb/.minikube $HOME 
+sudo chown -R $USER $HOME/.kube $HOME/.minikube
 
 kubectl cluster-info
 
 Application running commands
 
-kubectl run springboot-app --image=syedhaseebahmed12/devops-demo-app --port=8080 --image-pull-policy=IfNotPresent kubectl expose deployment springboot-app --type=NodePort minikube service springboot-app --url
+kubectl run springboot-app --image=syedhaseebahmed12/devops-demo-app --port=8080 --image-pull-policy=IfNotPresent 
+kubectl expose deployment springboot-app --type=NodePort minikube service springboot-app --url
 
 Cluster Status Commands
 
