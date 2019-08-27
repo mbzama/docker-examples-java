@@ -58,20 +58,21 @@ public class EmployeeController {
 		return "REST API test success!";
 	}
 	
-	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/all")
 	public List<Employee> get() {
 		LOGGER.info("/all");
 		return employeeRepository.findAll();
 	}
 	
-	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/create")
 	public Employee create(@Valid @RequestBody Employee employee) {
 		LOGGER.info("/create : "+employee);
 		return employeeRepository.save(employee);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/create-random")
 	public Employee createRandom() {
 		Employee employee = new Employee(RandomStringUtils.random(5, true, false),

@@ -1,0 +1,11 @@
+node_modules
+.git
+.gitignore
+.log
+.output
+output
+.settings/
+bin
+.classpath
+.project
+
