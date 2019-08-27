@@ -1,10 +1,8 @@
-node_modules
+.output
 .log
-output
-.settings/
 target
 bin
-.git
-git
-.classpath
-.project
+output
+classes
+node_nodules
+.settings

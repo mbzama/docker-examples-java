@@ -27,14 +27,6 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 
-	public Customer() {
-	}
-	
-	public Customer(String firstName, String lastName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.username = firstName + " " + lastName;
-	}
 
 	public Long getId() {
 		return id;
@@ -61,6 +53,12 @@ public class Customer {
 	}
 
 
+	public Customer(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = firstName + " " + lastName;
+	}
+	
 	 public String getUsername() {
 		return username;
 	}
