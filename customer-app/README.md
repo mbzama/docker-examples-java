@@ -2,7 +2,7 @@ Instructions:
   
   Build & Run: 
   
-     docker-compose up -d --build
+     sh buildimage.sh
      
      
   Build:
