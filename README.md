@@ -1,4 +1,24 @@
 -----------
+Cloud
+-----------
+Please create free account for any of these cloud vendor to practice kubernetes:
+
+Google cloud platform:
+
+     http://cloud.google.com
+     
+     
+Azure:
+
+     https://portal.azure.com
+     
+     
+AWS:
+
+     https://aws.amazon.com/console/
+
+
+-----------
 Git
 -----------
 	git remote add upstream https://github.com/mbzama/docker-training-java.git
