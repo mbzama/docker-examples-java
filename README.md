@@ -4,7 +4,7 @@
      -------------
      Build binary
      -------------
-         cd standalone
+         cd 1_standalone
          mvn clean compile jar:jar
 
      -------------
@@ -49,7 +49,7 @@
      -------------
      Build the executable
      -------------
-     cd spring-boot
+     cd 2_spring-boot
      mvn -DskipTests=true package && java -jar target/spring-boot-demo-1.0.jar
        
      Access the app using
