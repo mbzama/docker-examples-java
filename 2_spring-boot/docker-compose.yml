@@ -5,5 +5,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: spring-boot-app
+    expose: 
+      - 8085
     ports:
-      - 9999:8085
+      - 8001:8085
