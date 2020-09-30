@@ -4,7 +4,10 @@
 ## Build/Run locally
 	mvn clean package
 	
-	Copy the war file to Tomcat or any web server
+	Option 1: Run with embedded jetty plugin
+	mvn jetty:run
+	
+	Option 2: Copy the war file to Tomcat or any web server
 	## Accessing your app
 	Tomcat/Local: http://localhost:8080/spring-mvc-example-war-1.0.0/#
 

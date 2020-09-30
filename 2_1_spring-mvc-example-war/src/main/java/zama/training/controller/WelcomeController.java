@@ -11,7 +11,8 @@ import java.util.List;
 
 @Controller
 public class WelcomeController {
-
+	public static String PROPERTY_FILE_LOCATION = "/shared/";
+	
     @Value("${welcome.message}")
     private String message;
 
@@ -31,7 +32,10 @@ public class WelcomeController {
 
         model.addAttribute("message", name);
 
-        return "welcome"; //view
+        return "welcome";
     }
-
+    
+    private void readPropertyFile() {
+    	
+    }
 }
