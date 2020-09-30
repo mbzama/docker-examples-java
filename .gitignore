@@ -6,3 +6,5 @@ output
 classes
 node_nodules
 .settings
+.classpath
+.project
