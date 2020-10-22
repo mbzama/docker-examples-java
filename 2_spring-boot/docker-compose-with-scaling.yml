@@ -1,18 +1,23 @@
-version: '3.3'
+version: '3'
 
 services:
-  api:
+  app:
     build:
       context: ./
-      dockerfile: Dockerfile
-    image: spring-boot-app
+      dockerfile: Dockerfile  
+    image: 'spring-boot-app'
     expose: 
       - 8085
 
-  loadbalancer2:
-    image: 'dockercloud/haproxy:latest'
-    container_name: loadbalancer2  
-    links:
-      - api
+  loadbalancer:
+    container_name: nginx
+    image: nginx:1.13
+    expose: 
+      - 80
     ports:
-      - '8002:8085'      
+      - 8002:80
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on: 
+      - app
+  
