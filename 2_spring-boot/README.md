@@ -37,5 +37,5 @@
 	docker-compose -f docker-compose-with-scaling.yml --scale app=10
 
 ## Accessing your app with scale option
-	http://localhost:8002/spring-mvc-example-war-1.0.0/#
+	http://localhost:8002/greet?name=zama_testing
 
