@@ -24,18 +24,18 @@
 	
 
 ## Accessing your app
-	Docker: http://localhost:8001/spring-mvc-example-war-1.0.0/#
+	http://localhost:8001/spring-mvc-example-war-1.0.0/#
 	
 	
 ## Start with minimun 2 app containers:
-	`docker-compose -f docker-compose-with-scaling.yml up --scale app=2`
+	docker-compose -f docker-compose-with-scaling.yml up --build --scale app=2
 
 ## Scale up to 10 app containers:
-	`docker-compose -f docker-compose-with-scaling.yml --scale app=10`
+	docker-compose -f docker-compose-with-scaling.yml --scale app=10
 
 ## Scale down to 10 app containers:
-	`docker-compose -f docker-compose-with-scaling.yml --scale app=10`
+	docker-compose -f docker-compose-with-scaling.yml --scale app=10
 
 ## Accessing your app with scale option
-	Docker: http://localhost:8002/spring-mvc-example-war-1.0.0/#
+	http://localhost:8002/spring-mvc-example-war-1.0.0/#
 
