@@ -16,7 +16,7 @@
    		Ubuntu : http://localhost:9999/greet?name=zama
 
 ## Run docker container
-	docker rm -f --name spring-mvc-war 
+	docker rm -f springboot-c1
 
 
 ## Run using docker-compose without scaling
