@@ -44,7 +44,7 @@
 	
 ## Scale up the containers
     docker-compose -f docker-compose-with-scaling.yml up -d
-	docker-compose -f docker-compose-with-scaling.yml scale web=3
+	docker-compose -f docker-compose-with-scaling.yml scale app=3
 	
 	
 	
