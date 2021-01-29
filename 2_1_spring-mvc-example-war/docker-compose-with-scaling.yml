@@ -1,7 +1,7 @@
-version: '3.3'
+version: '3'
 
 services:
-  web:
+  app:
     build:
       context: ./
       dockerfile: Dockerfile
@@ -10,9 +10,14 @@ services:
       - 8080
 
   loadbalancer:
-    image: 'dockercloud/haproxy:latest'
-    container_name: loadbalancer   
-    links:
-      - web
+    container_name: nginx2
+    image: nginx:1.13
+    expose: 
+      - 80
     ports:
-      - '8001:8080'      
+      - 8003:80
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on: 
+      - app
+  
