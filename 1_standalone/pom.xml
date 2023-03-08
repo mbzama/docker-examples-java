@@ -7,43 +7,26 @@
 	<version>1.0</version>
 	<name>Standalone java app</name>
 
-	<properties>
-		<java.version>8</java.version>
-		<maven-jar-plugin.version>3.8.0</maven-jar-plugin.version>
-	</properties>
-	
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.2.0</version>
-					<configuration>
-						<archive>
-							<manifestFile>MANIFEST.MF</manifestFile>							
-							<index>true</index>
-							<manifest>
-								<mainClass>zama.training.standalone.App</mainClass>
-								<addClasspath>true</addClasspath>
-							</manifest>
-						</archive>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${maven-jar-plugin.version}</version>
-					<configuration>
-						<release>${java.version}</release>
-						<archive>
-							<manifest>
-								<mainClass>zama.training.standalone.App</mainClass>
-							</manifest>
-						</archive>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<verbose>true</verbose>
+					<fork>false</fork>
+					<source>11</source>
+					<target>11</target>
+					<forceJavacCompilerUse>true</forceJavacCompilerUse>
+					<archive>
+						<manifest>
+						<addClasspath>true</addClasspath>
+						<mainClass>zama.training.standalone.App</mainClass>
+						</manifest>
+					</archive>		  
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>	
 </project>

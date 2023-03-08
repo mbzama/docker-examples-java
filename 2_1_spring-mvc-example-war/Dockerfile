@@ -1,4 +1,4 @@
-FROM tomcat:9.0
+FROM tomcat:8.5-jdk11-corretto-al2
 
 COPY target/*.war /usr/local/tomcat/webapps/
 
